@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using RestDogsApplication.Models;
 
@@ -14,6 +15,8 @@ public sealed class InMemoryDogRepository : IDogRepository
         {
             Name = "Tom",
             Info = "Tom is the best dog.",
+            Age= 1,
+            Description = "General info about Tom",
             DateOfBorn = new DateTime(2020, 11, 22),
 
         },
@@ -21,6 +24,8 @@ public sealed class InMemoryDogRepository : IDogRepository
         {
             Name = "Ron",
             Info = "Ron is the biggest dog in the city.",
+            Age = 2,
+            Description = "General info about Ron",
             DateOfBorn = new DateTime(2019, 9, 22)
         }
     };

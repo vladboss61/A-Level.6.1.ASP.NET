@@ -1,0 +1,6 @@
+﻿@model DogViewModel[];
+
+@foreach (DogViewModel dog in @Model)
+{
+    <div>Dog Info: @dog.Name @dog.Type </div>
+}

@@ -1,0 +1,38 @@
+﻿@model DogViewModel[];
+
+@{
+    ViewData["Title"] = "Dogs Page";
+
+    if(10 == 10)
+    {
+        Console.WriteLine("Example from RAZOR CSHTML.");
+    }
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Dogs</h1>
+    <p>Learn about Dogs.</p>
+
+
+    <div> @ViewData["Title"] </div>
+    <div> @ViewData["Test"] </div>
+
+    @await Html.PartialAsync("~/Views/Dogs/Dog.cshtml", Model)
+    
+    @await Html.PartialAsync("Dog.cshtml", Model)
+    
+    @await Html.PartialAsync("Dog.cshtml", Model)
+    
+    @await Html.PartialAsync("Dog.cshtml", Model)
+    
+    @await Html.PartialAsync("Dog.cshtml", Model)
+
+    <script async>
+       console.log("From razor page:");
+    </script>
+
+    @*@for(int i = 0; i < 10; i++)
+    {
+        <div>@i</div>
+    }*@
+</div>

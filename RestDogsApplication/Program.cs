@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging.Abstractions;
-using RestDogsApplication.Controllers;
 using RestDogsApplication.Core;
+using RestDogsApplication.Core.Filters;
 using RestDogsApplication.Infrastructure;
+using System;
 
 namespace RestDogsApplication;
 
@@ -11,33 +11,37 @@ public class Program
 {
     public static void Main(string[] args)
     {
+       
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
         builder.Services.AddControllers();
         builder.Services.Configure<AppConfiguration>(builder.Configuration);
 
-        builder.Services.AddDistributedMemoryCache();
-        builder.Services.AddSession();
+        builder.Services.AddLocalization();
+        builder.Services.AddMvc(options =>
+        {
+            options.Filters.Add<LoggerFilter>();
+            options.Filters.Add<ExceptionFilter>();
+        });
+
+        builder.Services.AddCors();
 
         string value1 = builder.Configuration.GetSection("Logging").GetSection("LogLevel").GetSection("Default").Value;
         string value2 = builder.Configuration["ConnectionString"];
 
-        //Dependencies.
+        //Custom Dependencies.
         builder.Services.AddScoped<NumberGenerator>();
         builder.Services.AddSingleton<IDogRepository, InMemoryDogRepository>();
 
         var app = builder.Build();
 
-        app.UseMiddleware<Sample1Middleware>();
-        app.UseMiddleware<Sample2Middleware>();
+        app.UseRequestLocalization();
 
-        // Configure the HTTP request pipeline.
-        app.UseHttpsRedirection(); //Middleware 1
+        //Middelwares
+        app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
-        app.UseAuthorization(); //Middleware 2
-
-        app.MapControllers(); //Middleware 3
+        app.MapControllers();
 
         app.Run();
     }

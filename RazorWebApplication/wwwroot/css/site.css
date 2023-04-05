@@ -1,0 +1,13 @@
+html {
+  font-size: 22px;
+}
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
