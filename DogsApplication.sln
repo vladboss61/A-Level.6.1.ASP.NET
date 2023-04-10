@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestDogsApplication", "Rest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorWebApplication", "RazorWebApplication\RazorWebApplication.csproj", "{5B26EFA7-5B07-4978-B3E0-2156B93C3232}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestDogsApplication.Test", "RestDogsApplication.Test\RestDogsApplication.Test.csproj", "{F57C7E91-7C7B-46B8-903F-670A5C583134}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{D7A16D02-C328-4E7F-A93A-FD951F344C78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{5B26EFA7-5B07-4978-B3E0-2156B93C3232}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B26EFA7-5B07-4978-B3E0-2156B93C3232}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B26EFA7-5B07-4978-B3E0-2156B93C3232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F57C7E91-7C7B-46B8-903F-670A5C583134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F57C7E91-7C7B-46B8-903F-670A5C583134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F57C7E91-7C7B-46B8-903F-670A5C583134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F57C7E91-7C7B-46B8-903F-670A5C583134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7A16D02-C328-4E7F-A93A-FD951F344C78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7A16D02-C328-4E7F-A93A-FD951F344C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7A16D02-C328-4E7F-A93A-FD951F344C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7A16D02-C328-4E7F-A93A-FD951F344C78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

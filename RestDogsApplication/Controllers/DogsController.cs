@@ -19,7 +19,8 @@ public class DogsController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetDogsAsync()
     {
-        return Ok(await _dogRepository.GetDogsAsync());
+        var result = await _dogRepository.GetDogsAsync();
+        return Ok(result);
     }
 
     [HttpPost]
